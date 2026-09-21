@@ -1,0 +1,57 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tic Tac Toe - Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+  </head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="play.html">Play Now</a>
+    <a href="info.html">Info</a>
+    <a href="leaderboard.html">Leaderboard</a>
+  </nav>
+
+  <!-- Page Header -->
+  <header>
+    <h1>ACCOUNT ACCESS</h1>
+    <p>Sign in to record your match history and track stats</p>
+  </header>
+
+  <!-- Main Login Content -->
+  <main>
+    <section style="max-width: 400px; margin: 0 auto; text-align: left;">
+      <h2>Login</h2>
+
+      <!-- Form prepared for future backend processing -->
+      <form action="login.php" method="POST">
+        <div style="margin-bottom: 16px;">
+          <label for="username" style="font-weight: bold; display: block; margin-bottom: 6px;">Username:</label>
+          <input type="text" id="username" name="username" style="width: 100%; padding: 8px; box-sizing: border-box;" required>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <label for="password" style="font-weight: bold; display: block; margin-bottom: 6px;">Password:</label>
+          <input type="password" id="password" name="password" style="width: 100%; padding: 8px; box-sizing: border-box;" required>
+        </div>
+
+        <button type="submit" class="game-btn" style="width: 100%;">Sign In</button>
+      </form>
+
+      <p style="margin-top: 20px; font-size: 14px; text-align: center;">
+        Don't have an account? <a href="#" style="color: #5F259F; font-weight: bold;">Register here</a>
+      </p>
+    </section>
+  </main>
+
+  <!-- Shared Footer -->
+  <footer> 
+    <p>Tic Tac Toe Web Page Project</p>
+  </footer>
+
+</body>
+</html>
