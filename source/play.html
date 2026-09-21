@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tic Tac Toe - Play Now</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to the shared external stylesheet -->
+    <link rel="stylesheet" href="../styles/styles.css">
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="play.html" class="active">Play Now</a>
+    <a href="info.html">Info</a>
+    <a href="leaderboard.html">Leaderboard</a>
+  </nav>
+
+  <!-- Page Header -->
+  <header>
+    <h1>GAME ARENA</h1>
+    <p>Select your board settings and make your move!</p>
+  </header>
+
+  <!-- Main Game Content -->
+  <main>
+    <!-- Game Configuration & Sizing Controls -->
+    <section class="game-controls">
+      <label for="board-size">Grid Size:</label>
+      <select id="board-size" name="board-size">
+        <option value="3" selected>3 x 3</option>
+        <option value="6">6 x 6</option>
+        <option value="9">9 x 9</option>
+      </select>
+
+      <label for="game-mode">Opponent:</label>
+      <select id="game-mode" name="game-mode">
+        <option value="local">Pass & Play (Local 2P)</option>
+        <option value="ai">Play vs. AI</option>
+      </select>
+
+      <button type="button" id="reset-btn" class="game-btn">New Game</button>
+    </section>
+
+    <!-- Turn/Match Status Announcement 
+      -- Alter for dynamic feature tracks current players turn-->
+    <div id="status" class="status-display">Player X's Turn</div>
+
+    <!-- 3x3 Default Skeleton Board (CSS Grid) -->
+    <!-- Ready to be dynamically populated by JavaScript -->
+    <div id="game-board" class="grid-container" style="--grid-size: 3;">
+      <div class="cell" id="cell-0"></div>
+      <div class="cell" id="cell-1"></div>
+      <div class="cell" id="cell-2"></div>
+      <div class="cell" id="cell-3"></div>
+      <div class="cell" id="cell-4"></div>
+      <div class="cell" id="cell-5"></div>
+      <div class="cell" id="cell-6"></div>
+      <div class="cell" id="cell-7"></div>
+      <div class="cell" id="cell-8"></div>
+    </div>
+  </main>
+
+  <!-- Shared Footer -->
+  <footer> 
+    <p>Tic Tac Toe Web Page Project</p>
+  </footer>
+
+</body>
+</html>
