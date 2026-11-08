@@ -13,7 +13,7 @@
     <a href="index.html">Home</a>
     <a href="play.html" class="active">Play Now</a>
     <a href="info.html">Info</a>
-    <a href="leaderboard.html">Leaderboard</a>
+    <a href="leaderboard.php">Leaderboard</a>
     <a href="login.html">Login</a>
   </nav>
 
@@ -35,6 +35,12 @@
       <label for="game-mode">Opponent:</label>
       <select id="game-mode" name="game-mode">
         <option value="local">Pass & Play (Local 2P)</option>
+      </select>
+
+      <label for="player-symbol">Your Symbol:</label>
+      <select id="player-symbol" name="player-symbol">
+        <option value="X" selected>Play as X (first)</option>
+        <option value="O">Play as O (second)</option>
       </select>
 
       <button type="button" id="reset-btn" class="game-btn">New Game</button>
@@ -64,5 +70,6 @@
     <p>Tic Tac Toe</p>
   </footer>
 <script src="scripts/game.js"></script>
+<script src="scripts/nav.js"></script>
 </body>
 </html>

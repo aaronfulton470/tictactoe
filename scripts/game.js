@@ -4,6 +4,8 @@ let currentPlayer = "X";
 let gameActive = true;
 const statusDisplay = document.getElementById("status");
 const resetBtn = document.getElementById("reset-btn");
+const playerSymbolSelect = document.getElementById("player-symbol");
+
 
 const winningConditions = [
     [0, 1, 2],
@@ -33,6 +35,10 @@ function handleCellClick(event) {
   boardState[clickedCellIndex] = currentPlayer;
   clickedCell.textContent = currentPlayer;
 
+  if (playerSymbolSelect) {
+    playerSymbolSelect.disabled = true;
+  }
+
   //Function call to check for a winner or draw
   checkResult();
 }
@@ -61,6 +67,11 @@ function checkResult() {
     if (roundWon) {
       statusDisplay.textContent = `Player ${currentPlayer} Wins!`;
       gameActive = false;
+
+      const chosenSymbol = playerSymbolSelect ? playerSymbolSelect.value : "X";
+      const outcome = (currentPlayer === chosenSymbol) ? "win" : "loss";
+      recordMatch(outcome);
+
       return;
     }
 
@@ -68,6 +79,8 @@ function checkResult() {
     if (boardState.includes("") === false) {
       statusDisplay.textContent = "Draw!";
       gameActive = false;
+
+      recordMatch("draw");
       return;
     }
 
@@ -89,6 +102,11 @@ function resetGame() {
   gameActive = true;
   statusDisplay.textContent = `Player ${currentPlayer}'s Turn`;
   cells.forEach(cell => cell.textContent = "");
+
+
+if (playerSymbolSelect) {
+  playerSymbolSelect.disabled = false;
+  }
 }
 
 // Event Listeners
@@ -97,3 +115,21 @@ cells.forEach((cell, index) => {
 });
 
 resetBtn.addEventListener("click", resetGame);
+
+//Sends match outcome to the server
+function recordMatch(outcome) {
+  fetch("record_match.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ result:outcome })
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log("Match recorded:", data);
+  })
+  .catch(error => {
+    console.error("Error recording match:", error);
+  });
+}
