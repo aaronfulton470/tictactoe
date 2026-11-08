@@ -13,13 +13,14 @@
     <a href="index.html">Home</a>
     <a href="play.html">Play Now</a>
     <a href="info.html">Info</a>
-    <a href="leaderboard.html">Leaderboard</a>
+    <a href="leaderboard.php">Leaderboard</a>
+    <a href="login.html">Login</a>
   </nav>
 
   <!-- Page Header -->
   <header>
-    <h1>ACCOUNT ACCESS</h1>
-    <p>Sign in to record your match history and track stats</p>
+    <h1>PLAYER LOGIN</h1>
+    <p>Sign in to record your match results and track leaderboard rank</p>
   </header>
 
   <!-- Main Login Content -->
@@ -38,12 +39,12 @@
           <label for="password" style="font-weight: bold; display: block; margin-bottom: 6px;">Password:</label>
           <input type="password" id="password" name="password" style="width: 100%; padding: 8px; box-sizing: border-box;" required>
         </div>
-
+        <div id="login-message" style="margin-bottom: 12px; font-weight: bold;"></div>
         <button type="submit" class="game-btn" style="width: 100%;">Sign In</button>
       </form>
 
       <p style="margin-top: 20px; font-size: 14px; text-align: center;">
-        Don't have an account? <a href="#" style="color: #5F259F; font-weight: bold;">Register here</a>
+        Don't have an account? <a href="#" style="color: #5F259F; font-weight: bold;"><a href="register.html">Register here </a>
       </p>
     </section>
   </main>
@@ -53,5 +54,6 @@
     <p>Tic Tac Toe Web Page Project</p>
   </footer>
 
+<script src="scripts/auth.js"></script>
 </body>
 </html>

@@ -13,7 +13,8 @@
     <a href="index.html">Home</a>
     <a href="play.html" class="active">Play Now</a>
     <a href="info.html">Info</a>
-    <a href="leaderboard.html">Leaderboard</a>
+    <a href="leaderboard.php">Leaderboard</a>
+    <a href="login.html">Login</a>
   </nav>
 
   <!-- Page Header -->
@@ -29,14 +30,17 @@
       <label for="board-size">Grid Size:</label>
       <select id="board-size" name="board-size">
         <option value="3" selected>3 x 3</option>
-        <option value="6">6 x 6</option>
-        <option value="9">9 x 9</option>
       </select>
 
       <label for="game-mode">Opponent:</label>
       <select id="game-mode" name="game-mode">
         <option value="local">Pass & Play (Local 2P)</option>
-        <option value="ai">Play vs. AI</option>
+      </select>
+
+      <label for="player-symbol">Your Symbol:</label>
+      <select id="player-symbol" name="player-symbol">
+        <option value="X" selected>Play as X (first)</option>
+        <option value="O">Play as O (second)</option>
       </select>
 
       <button type="button" id="reset-btn" class="game-btn">New Game</button>
@@ -63,8 +67,9 @@
 
   <!-- Shared Footer -->
   <footer> 
-    <p>Tic Tac Toe Web Page Project</p>
+    <p>Tic Tac Toe</p>
   </footer>
-
+<script src="scripts/game.js"></script>
+<script src="scripts/nav.js"></script>
 </body>
 </html>
